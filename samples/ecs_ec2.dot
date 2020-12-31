@@ -1,0 +1,7 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+	}
+}
+

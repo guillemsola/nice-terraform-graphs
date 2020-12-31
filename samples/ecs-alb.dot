@@ -1,0 +1,123 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_alb.main (expand)" [label = "aws_alb.main", shape = "box"]
+		"[root] aws_alb_listener.front_end (expand)" [label = "aws_alb_listener.front_end", shape = "box"]
+		"[root] aws_alb_target_group.test (expand)" [label = "aws_alb_target_group.test", shape = "box"]
+		"[root] aws_autoscaling_group.app (expand)" [label = "aws_autoscaling_group.app", shape = "box"]
+		"[root] aws_cloudwatch_log_group.app (expand)" [label = "aws_cloudwatch_log_group.app", shape = "box"]
+		"[root] aws_cloudwatch_log_group.ecs (expand)" [label = "aws_cloudwatch_log_group.ecs", shape = "box"]
+		"[root] aws_ecs_cluster.main (expand)" [label = "aws_ecs_cluster.main", shape = "box"]
+		"[root] aws_ecs_service.test (expand)" [label = "aws_ecs_service.test", shape = "box"]
+		"[root] aws_ecs_task_definition.ghost (expand)" [label = "aws_ecs_task_definition.ghost", shape = "box"]
+		"[root] aws_iam_instance_profile.app (expand)" [label = "aws_iam_instance_profile.app", shape = "box"]
+		"[root] aws_iam_role.app_instance (expand)" [label = "aws_iam_role.app_instance", shape = "box"]
+		"[root] aws_iam_role.ecs_service (expand)" [label = "aws_iam_role.ecs_service", shape = "box"]
+		"[root] aws_iam_role_policy.ecs_service (expand)" [label = "aws_iam_role_policy.ecs_service", shape = "box"]
+		"[root] aws_iam_role_policy.instance (expand)" [label = "aws_iam_role_policy.instance", shape = "box"]
+		"[root] aws_internet_gateway.gw (expand)" [label = "aws_internet_gateway.gw", shape = "box"]
+		"[root] aws_launch_configuration.app (expand)" [label = "aws_launch_configuration.app", shape = "box"]
+		"[root] aws_route_table.r (expand)" [label = "aws_route_table.r", shape = "box"]
+		"[root] aws_route_table_association.a (expand)" [label = "aws_route_table_association.a", shape = "box"]
+		"[root] aws_security_group.instance_sg (expand)" [label = "aws_security_group.instance_sg", shape = "box"]
+		"[root] aws_security_group.lb_sg (expand)" [label = "aws_security_group.lb_sg", shape = "box"]
+		"[root] aws_subnet.main (expand)" [label = "aws_subnet.main", shape = "box"]
+		"[root] aws_vpc.main (expand)" [label = "aws_vpc.main", shape = "box"]
+		"[root] data.aws_ami.stable_coreos (expand)" [label = "data.aws_ami.stable_coreos", shape = "box"]
+		"[root] data.aws_availability_zones.available (expand)" [label = "data.aws_availability_zones.available", shape = "box"]
+		"[root] data.template_file.cloud_config (expand)" [label = "data.template_file.cloud_config", shape = "box"]
+		"[root] data.template_file.instance_profile (expand)" [label = "data.template_file.instance_profile", shape = "box"]
+		"[root] data.template_file.task_definition (expand)" [label = "data.template_file.task_definition", shape = "box"]
+		"[root] output.asg_name" [label = "output.asg_name", shape = "note"]
+		"[root] output.elb_hostname" [label = "output.elb_hostname", shape = "note"]
+		"[root] output.instance_security_group" [label = "output.instance_security_group", shape = "note"]
+		"[root] output.launch_configuration" [label = "output.launch_configuration", shape = "note"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"]" [label = "provider[\"registry.terraform.io/hashicorp/template\"]", shape = "diamond"]
+		"[root] var.admin_cidr_ingress" [label = "var.admin_cidr_ingress", shape = "note"]
+		"[root] var.asg_desired" [label = "var.asg_desired", shape = "note"]
+		"[root] var.asg_max" [label = "var.asg_max", shape = "note"]
+		"[root] var.asg_min" [label = "var.asg_min", shape = "note"]
+		"[root] var.aws_region" [label = "var.aws_region", shape = "note"]
+		"[root] var.az_count" [label = "var.az_count", shape = "note"]
+		"[root] var.instance_type" [label = "var.instance_type", shape = "note"]
+		"[root] var.key_name" [label = "var.key_name", shape = "note"]
+		"[root] var.service_desired" [label = "var.service_desired", shape = "note"]
+		"[root] aws_alb.main (expand)" -> "[root] aws_security_group.lb_sg (expand)"
+		"[root] aws_alb.main (expand)" -> "[root] aws_subnet.main (expand)"
+		"[root] aws_alb_listener.front_end (expand)" -> "[root] aws_alb.main (expand)"
+		"[root] aws_alb_listener.front_end (expand)" -> "[root] aws_alb_target_group.test (expand)"
+		"[root] aws_alb_target_group.test (expand)" -> "[root] aws_vpc.main (expand)"
+		"[root] aws_autoscaling_group.app (expand)" -> "[root] aws_launch_configuration.app (expand)"
+		"[root] aws_autoscaling_group.app (expand)" -> "[root] aws_subnet.main (expand)"
+		"[root] aws_autoscaling_group.app (expand)" -> "[root] var.asg_desired"
+		"[root] aws_autoscaling_group.app (expand)" -> "[root] var.asg_max"
+		"[root] aws_autoscaling_group.app (expand)" -> "[root] var.asg_min"
+		"[root] aws_cloudwatch_log_group.app (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_cloudwatch_log_group.ecs (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_ecs_cluster.main (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_ecs_service.test (expand)" -> "[root] aws_alb_listener.front_end (expand)"
+		"[root] aws_ecs_service.test (expand)" -> "[root] aws_ecs_cluster.main (expand)"
+		"[root] aws_ecs_service.test (expand)" -> "[root] aws_ecs_task_definition.ghost (expand)"
+		"[root] aws_ecs_service.test (expand)" -> "[root] aws_iam_role_policy.ecs_service (expand)"
+		"[root] aws_ecs_service.test (expand)" -> "[root] var.service_desired"
+		"[root] aws_ecs_task_definition.ghost (expand)" -> "[root] data.template_file.task_definition (expand)"
+		"[root] aws_iam_instance_profile.app (expand)" -> "[root] aws_iam_role.app_instance (expand)"
+		"[root] aws_iam_role.app_instance (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_role.ecs_service (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_role_policy.ecs_service (expand)" -> "[root] aws_iam_role.ecs_service (expand)"
+		"[root] aws_iam_role_policy.instance (expand)" -> "[root] aws_iam_role.app_instance (expand)"
+		"[root] aws_iam_role_policy.instance (expand)" -> "[root] data.template_file.instance_profile (expand)"
+		"[root] aws_internet_gateway.gw (expand)" -> "[root] aws_vpc.main (expand)"
+		"[root] aws_launch_configuration.app (expand)" -> "[root] aws_iam_instance_profile.app (expand)"
+		"[root] aws_launch_configuration.app (expand)" -> "[root] aws_security_group.instance_sg (expand)"
+		"[root] aws_launch_configuration.app (expand)" -> "[root] data.aws_ami.stable_coreos (expand)"
+		"[root] aws_launch_configuration.app (expand)" -> "[root] data.template_file.cloud_config (expand)"
+		"[root] aws_launch_configuration.app (expand)" -> "[root] var.instance_type"
+		"[root] aws_launch_configuration.app (expand)" -> "[root] var.key_name"
+		"[root] aws_route_table.r (expand)" -> "[root] aws_internet_gateway.gw (expand)"
+		"[root] aws_route_table_association.a (expand)" -> "[root] aws_route_table.r (expand)"
+		"[root] aws_route_table_association.a (expand)" -> "[root] aws_subnet.main (expand)"
+		"[root] aws_security_group.instance_sg (expand)" -> "[root] aws_security_group.lb_sg (expand)"
+		"[root] aws_security_group.instance_sg (expand)" -> "[root] var.admin_cidr_ingress"
+		"[root] aws_security_group.lb_sg (expand)" -> "[root] aws_vpc.main (expand)"
+		"[root] aws_subnet.main (expand)" -> "[root] aws_vpc.main (expand)"
+		"[root] aws_subnet.main (expand)" -> "[root] data.aws_availability_zones.available (expand)"
+		"[root] aws_subnet.main (expand)" -> "[root] var.az_count"
+		"[root] aws_vpc.main (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.aws_ami.stable_coreos (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.aws_availability_zones.available (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.template_file.cloud_config (expand)" -> "[root] aws_cloudwatch_log_group.ecs (expand)"
+		"[root] data.template_file.cloud_config (expand)" -> "[root] aws_ecs_cluster.main (expand)"
+		"[root] data.template_file.cloud_config (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"]"
+		"[root] data.template_file.instance_profile (expand)" -> "[root] aws_cloudwatch_log_group.app (expand)"
+		"[root] data.template_file.instance_profile (expand)" -> "[root] aws_cloudwatch_log_group.ecs (expand)"
+		"[root] data.template_file.instance_profile (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"]"
+		"[root] data.template_file.task_definition (expand)" -> "[root] aws_cloudwatch_log_group.app (expand)"
+		"[root] data.template_file.task_definition (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"]"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_ecs_service.test (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_role_policy.instance (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route_table_association.a (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] output.asg_name"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] output.elb_hostname"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] output.instance_security_group"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] output.launch_configuration"
+		"[root] output.asg_name" -> "[root] aws_autoscaling_group.app (expand)"
+		"[root] output.elb_hostname" -> "[root] aws_alb.main (expand)"
+		"[root] output.instance_security_group" -> "[root] aws_security_group.instance_sg (expand)"
+		"[root] output.launch_configuration" -> "[root] aws_launch_configuration.app (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_autoscaling_group.app (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_ecs_service.test (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_role_policy.instance (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.a (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.aws_region"
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)" -> "[root] data.template_file.cloud_config (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)" -> "[root] data.template_file.instance_profile (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)" -> "[root] data.template_file.task_definition (expand)"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)"
+	}
+}
+

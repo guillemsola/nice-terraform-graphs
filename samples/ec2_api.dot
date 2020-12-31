@@ -1,0 +1,231 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] module.asg.aws_autoscaling_group.dmi_asg" [label = "module.asg.aws_autoscaling_group.dmi_asg", shape = "box"]
+		"[root] module.asg.aws_launch_configuration.dmi_lc" [label = "module.asg.aws_launch_configuration.dmi_lc", shape = "box"]
+		"[root] module.asg.data.null_data_source.asg_tags" [label = "module.asg.data.null_data_source.asg_tags", shape = "box"]
+		"[root] module.asg.var.availability_zones" [label = "module.asg.var.availability_zones", shape = "note"]
+		"[root] module.asg.var.desired_capacity" [label = "module.asg.var.desired_capacity", shape = "note"]
+		"[root] module.asg.var.elb_name" [label = "module.asg.var.elb_name", shape = "note"]
+		"[root] module.asg.var.enable_monitoring" [label = "module.asg.var.enable_monitoring", shape = "note"]
+		"[root] module.asg.var.iam_instance_profile" [label = "module.asg.var.iam_instance_profile", shape = "note"]
+		"[root] module.asg.var.image_id" [label = "module.asg.var.image_id", shape = "note"]
+		"[root] module.asg.var.instance_type" [label = "module.asg.var.instance_type", shape = "note"]
+		"[root] module.asg.var.key_name" [label = "module.asg.var.key_name", shape = "note"]
+		"[root] module.asg.var.max_size" [label = "module.asg.var.max_size", shape = "note"]
+		"[root] module.asg.var.min_size" [label = "module.asg.var.min_size", shape = "note"]
+		"[root] module.asg.var.name_prefix" [label = "module.asg.var.name_prefix", shape = "note"]
+		"[root] module.asg.var.root_block_size_gb" [label = "module.asg.var.root_block_size_gb", shape = "note"]
+		"[root] module.asg.var.security_groups" [label = "module.asg.var.security_groups", shape = "note"]
+		"[root] module.asg.var.subnet_ids" [label = "module.asg.var.subnet_ids", shape = "note"]
+		"[root] module.asg.var.tags" [label = "module.asg.var.tags", shape = "note"]
+		"[root] module.asg.var.user_data" [label = "module.asg.var.user_data", shape = "note"]
+		"[root] module.chef-max.data.template_file.linux_userdata" [label = "module.chef-max.data.template_file.linux_userdata", shape = "box"]
+		"[root] module.chef-max.data.template_file.windows_userdata" [label = "module.chef-max.data.template_file.windows_userdata", shape = "box"]
+		"[root] module.chef-max.output.linux_userdata" [label = "module.chef-max.output.linux_userdata", shape = "note"]
+		"[root] module.chef-max.output.windows_userdata" [label = "module.chef-max.output.windows_userdata", shape = "note"]
+		"[root] module.chef-max.var.chef_cookbook" [label = "module.chef-max.var.chef_cookbook", shape = "note"]
+		"[root] module.chef-max.var.chef_cookbook_version" [label = "module.chef-max.var.chef_cookbook_version", shape = "note"]
+		"[root] module.chef-max.var.chef_env" [label = "module.chef-max.var.chef_env", shape = "note"]
+		"[root] module.chef-max.var.chef_interval" [label = "module.chef-max.var.chef_interval", shape = "note"]
+		"[root] module.chef-max.var.chef_role" [label = "module.chef-max.var.chef_role", shape = "note"]
+		"[root] module.chef-max.var.lc_name" [label = "module.chef-max.var.lc_name", shape = "note"]
+		"[root] module.chef-max.var.region" [label = "module.chef-max.var.region", shape = "note"]
+		"[root] module.chef-max.var.stack_id" [label = "module.chef-max.var.stack_id", shape = "note"]
+		"[root] module.chef-max.var.stack_name" [label = "module.chef-max.var.stack_name", shape = "note"]
+		"[root] module.common_data.data.aws_iam_instance_profile.selected" [label = "module.common_data.data.aws_iam_instance_profile.selected", shape = "box"]
+		"[root] module.common_data.data.aws_route53_zone.selected" [label = "module.common_data.data.aws_route53_zone.selected", shape = "box"]
+		"[root] module.common_data.data.aws_security_group.elb_security_groups" [label = "module.common_data.data.aws_security_group.elb_security_groups", shape = "box"]
+		"[root] module.common_data.data.aws_security_group.security_groups" [label = "module.common_data.data.aws_security_group.security_groups", shape = "box"]
+		"[root] module.common_data.data.aws_subnet.subnets" [label = "module.common_data.data.aws_subnet.subnets", shape = "box"]
+		"[root] module.common_data.data.aws_subnet_ids.selected" [label = "module.common_data.data.aws_subnet_ids.selected", shape = "box"]
+		"[root] module.common_data.data.aws_vpc.default" [label = "module.common_data.data.aws_vpc.default", shape = "box"]
+		"[root] module.common_data.output.availability_zones" [label = "module.common_data.output.availability_zones", shape = "note"]
+		"[root] module.common_data.output.elb_security_groups" [label = "module.common_data.output.elb_security_groups", shape = "note"]
+		"[root] module.common_data.output.iam_instance_profile" [label = "module.common_data.output.iam_instance_profile", shape = "note"]
+		"[root] module.common_data.output.route53_zone_id" [label = "module.common_data.output.route53_zone_id", shape = "note"]
+		"[root] module.common_data.output.security_groups" [label = "module.common_data.output.security_groups", shape = "note"]
+		"[root] module.common_data.output.subnet_ids" [label = "module.common_data.output.subnet_ids", shape = "note"]
+		"[root] module.common_data.output.vpc_id" [label = "module.common_data.output.vpc_id", shape = "note"]
+		"[root] module.common_data.var.elb_sg_names" [label = "module.common_data.var.elb_sg_names", shape = "note"]
+		"[root] module.common_data.var.max_number_of_azs" [label = "module.common_data.var.max_number_of_azs", shape = "note"]
+		"[root] module.common_data.var.role_name" [label = "module.common_data.var.role_name", shape = "note"]
+		"[root] module.common_data.var.route53_zone_name" [label = "module.common_data.var.route53_zone_name", shape = "note"]
+		"[root] module.common_data.var.sg_names" [label = "module.common_data.var.sg_names", shape = "note"]
+		"[root] module.common_data.var.subnets_name" [label = "module.common_data.var.subnets_name", shape = "note"]
+		"[root] module.common_data.var.vpc_name" [label = "module.common_data.var.vpc_name", shape = "note"]
+		"[root] module.elb.aws_elb.elb" [label = "module.elb.aws_elb.elb", shape = "box"]
+		"[root] module.elb.output.dns_name" [label = "module.elb.output.dns_name", shape = "note"]
+		"[root] module.elb.output.name" [label = "module.elb.output.name", shape = "note"]
+		"[root] module.elb.output.zone_id" [label = "module.elb.output.zone_id", shape = "note"]
+		"[root] module.elb.var.connection_draining" [label = "module.elb.var.connection_draining", shape = "note"]
+		"[root] module.elb.var.connection_draining_timeout" [label = "module.elb.var.connection_draining_timeout", shape = "note"]
+		"[root] module.elb.var.cross_zone_load_balancing" [label = "module.elb.var.cross_zone_load_balancing", shape = "note"]
+		"[root] module.elb.var.health_check_path" [label = "module.elb.var.health_check_path", shape = "note"]
+		"[root] module.elb.var.healthy_threshold" [label = "module.elb.var.healthy_threshold", shape = "note"]
+		"[root] module.elb.var.idle_timeout" [label = "module.elb.var.idle_timeout", shape = "note"]
+		"[root] module.elb.var.internal" [label = "module.elb.var.internal", shape = "note"]
+		"[root] module.elb.var.interval" [label = "module.elb.var.interval", shape = "note"]
+		"[root] module.elb.var.name_prefix" [label = "module.elb.var.name_prefix", shape = "note"]
+		"[root] module.elb.var.security_groups" [label = "module.elb.var.security_groups", shape = "note"]
+		"[root] module.elb.var.ssl_certificate_id" [label = "module.elb.var.ssl_certificate_id", shape = "note"]
+		"[root] module.elb.var.subnet_ids" [label = "module.elb.var.subnet_ids", shape = "note"]
+		"[root] module.elb.var.tags" [label = "module.elb.var.tags", shape = "note"]
+		"[root] module.elb.var.timeout" [label = "module.elb.var.timeout", shape = "note"]
+		"[root] module.elb.var.unhealthy_threshold" [label = "module.elb.var.unhealthy_threshold", shape = "note"]
+		"[root] module.route53.aws_route53_record.dmi_api" [label = "module.route53.aws_route53_record.dmi_api", shape = "box"]
+		"[root] module.route53.var.cname" [label = "module.route53.var.cname", shape = "note"]
+		"[root] module.route53.var.elb_dns_name" [label = "module.route53.var.elb_dns_name", shape = "note"]
+		"[root] module.route53.var.elb_zone_id" [label = "module.route53.var.elb_zone_id", shape = "note"]
+		"[root] module.route53.var.route53_zone_id" [label = "module.route53.var.route53_zone_id", shape = "note"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] provider.null" [label = "provider.null", shape = "diamond"]
+		"[root] provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] var.acm_certificate_id" [label = "var.acm_certificate_id", shape = "note"]
+		"[root] var.api_cname" [label = "var.api_cname", shape = "note"]
+		"[root] var.chef_cookbook" [label = "var.chef_cookbook", shape = "note"]
+		"[root] var.chef_cookbook_version" [label = "var.chef_cookbook_version", shape = "note"]
+		"[root] var.chef_env" [label = "var.chef_env", shape = "note"]
+		"[root] var.chef_role" [label = "var.chef_role", shape = "note"]
+		"[root] var.desired_capacity" [label = "var.desired_capacity", shape = "note"]
+		"[root] var.elb_name_prefix" [label = "var.elb_name_prefix", shape = "note"]
+		"[root] var.image_id" [label = "var.image_id", shape = "note"]
+		"[root] var.instance_type" [label = "var.instance_type", shape = "note"]
+		"[root] var.key_name" [label = "var.key_name", shape = "note"]
+		"[root] var.max_number_of_azs" [label = "var.max_number_of_azs", shape = "note"]
+		"[root] var.max_size" [label = "var.max_size", shape = "note"]
+		"[root] var.min_size" [label = "var.min_size", shape = "note"]
+		"[root] var.name_prefix" [label = "var.name_prefix", shape = "note"]
+		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] var.root_block_size_gb" [label = "var.root_block_size_gb", shape = "note"]
+		"[root] var.route53_zone_name" [label = "var.route53_zone_name", shape = "note"]
+		"[root] var.tags" [label = "var.tags", shape = "note"]
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.asg.aws_autoscaling_group.dmi_asg"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.chef-max.output.linux_userdata"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.common_data.output.vpc_id"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.common_data.var.subnets_name"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.common_data.var.vpc_name"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.route53.aws_route53_record.dmi_api"
+		"[root] module.asg.aws_autoscaling_group.dmi_asg" -> "[root] module.asg.aws_launch_configuration.dmi_lc"
+		"[root] module.asg.aws_autoscaling_group.dmi_asg" -> "[root] module.asg.data.null_data_source.asg_tags"
+		"[root] module.asg.aws_autoscaling_group.dmi_asg" -> "[root] module.asg.var.availability_zones"
+		"[root] module.asg.aws_autoscaling_group.dmi_asg" -> "[root] module.asg.var.desired_capacity"
+		"[root] module.asg.aws_autoscaling_group.dmi_asg" -> "[root] module.asg.var.elb_name"
+		"[root] module.asg.aws_autoscaling_group.dmi_asg" -> "[root] module.asg.var.max_size"
+		"[root] module.asg.aws_autoscaling_group.dmi_asg" -> "[root] module.asg.var.min_size"
+		"[root] module.asg.aws_autoscaling_group.dmi_asg" -> "[root] module.asg.var.subnet_ids"
+		"[root] module.asg.aws_launch_configuration.dmi_lc" -> "[root] module.asg.var.enable_monitoring"
+		"[root] module.asg.aws_launch_configuration.dmi_lc" -> "[root] module.asg.var.iam_instance_profile"
+		"[root] module.asg.aws_launch_configuration.dmi_lc" -> "[root] module.asg.var.image_id"
+		"[root] module.asg.aws_launch_configuration.dmi_lc" -> "[root] module.asg.var.instance_type"
+		"[root] module.asg.aws_launch_configuration.dmi_lc" -> "[root] module.asg.var.key_name"
+		"[root] module.asg.aws_launch_configuration.dmi_lc" -> "[root] module.asg.var.name_prefix"
+		"[root] module.asg.aws_launch_configuration.dmi_lc" -> "[root] module.asg.var.root_block_size_gb"
+		"[root] module.asg.aws_launch_configuration.dmi_lc" -> "[root] module.asg.var.security_groups"
+		"[root] module.asg.aws_launch_configuration.dmi_lc" -> "[root] module.asg.var.user_data"
+		"[root] module.asg.data.null_data_source.asg_tags" -> "[root] module.asg.var.tags"
+		"[root] module.asg.data.null_data_source.asg_tags" -> "[root] provider.null"
+		"[root] module.asg.var.availability_zones" -> "[root] module.common_data.output.availability_zones"
+		"[root] module.asg.var.desired_capacity" -> "[root] var.desired_capacity"
+		"[root] module.asg.var.elb_name" -> "[root] module.elb.output.name"
+		"[root] module.asg.var.iam_instance_profile" -> "[root] module.common_data.output.iam_instance_profile"
+		"[root] module.asg.var.image_id" -> "[root] var.image_id"
+		"[root] module.asg.var.instance_type" -> "[root] var.instance_type"
+		"[root] module.asg.var.key_name" -> "[root] var.key_name"
+		"[root] module.asg.var.max_size" -> "[root] var.max_size"
+		"[root] module.asg.var.min_size" -> "[root] var.min_size"
+		"[root] module.asg.var.name_prefix" -> "[root] var.name_prefix"
+		"[root] module.asg.var.root_block_size_gb" -> "[root] var.root_block_size_gb"
+		"[root] module.asg.var.security_groups" -> "[root] module.common_data.output.security_groups"
+		"[root] module.asg.var.subnet_ids" -> "[root] module.common_data.output.subnet_ids"
+		"[root] module.asg.var.tags" -> "[root] var.tags"
+		"[root] module.asg.var.user_data" -> "[root] module.chef-max.output.windows_userdata"
+		"[root] module.chef-max.data.template_file.linux_userdata" -> "[root] module.chef-max.var.chef_cookbook"
+		"[root] module.chef-max.data.template_file.linux_userdata" -> "[root] module.chef-max.var.chef_cookbook_version"
+		"[root] module.chef-max.data.template_file.linux_userdata" -> "[root] module.chef-max.var.chef_env"
+		"[root] module.chef-max.data.template_file.linux_userdata" -> "[root] module.chef-max.var.chef_interval"
+		"[root] module.chef-max.data.template_file.linux_userdata" -> "[root] module.chef-max.var.chef_role"
+		"[root] module.chef-max.data.template_file.linux_userdata" -> "[root] provider.template"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] module.chef-max.var.chef_cookbook"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] module.chef-max.var.chef_cookbook_version"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] module.chef-max.var.chef_env"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] module.chef-max.var.chef_interval"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] module.chef-max.var.chef_role"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] module.chef-max.var.lc_name"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] module.chef-max.var.region"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] module.chef-max.var.stack_id"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] module.chef-max.var.stack_name"
+		"[root] module.chef-max.data.template_file.windows_userdata" -> "[root] provider.template"
+		"[root] module.chef-max.output.linux_userdata" -> "[root] module.chef-max.data.template_file.linux_userdata"
+		"[root] module.chef-max.output.windows_userdata" -> "[root] module.chef-max.data.template_file.windows_userdata"
+		"[root] module.chef-max.var.chef_cookbook" -> "[root] var.chef_cookbook"
+		"[root] module.chef-max.var.chef_cookbook_version" -> "[root] var.chef_cookbook_version"
+		"[root] module.chef-max.var.chef_env" -> "[root] var.chef_env"
+		"[root] module.chef-max.var.chef_role" -> "[root] var.chef_role"
+		"[root] module.chef-max.var.region" -> "[root] var.region"
+		"[root] module.common_data.data.aws_iam_instance_profile.selected" -> "[root] module.common_data.var.role_name"
+		"[root] module.common_data.data.aws_iam_instance_profile.selected" -> "[root] provider.aws"
+		"[root] module.common_data.data.aws_route53_zone.selected" -> "[root] module.common_data.var.route53_zone_name"
+		"[root] module.common_data.data.aws_route53_zone.selected" -> "[root] provider.aws"
+		"[root] module.common_data.data.aws_security_group.elb_security_groups" -> "[root] module.common_data.var.elb_sg_names"
+		"[root] module.common_data.data.aws_security_group.elb_security_groups" -> "[root] provider.aws"
+		"[root] module.common_data.data.aws_security_group.security_groups" -> "[root] module.common_data.var.sg_names"
+		"[root] module.common_data.data.aws_security_group.security_groups" -> "[root] provider.aws"
+		"[root] module.common_data.data.aws_subnet.subnets" -> "[root] module.common_data.data.aws_subnet_ids.selected"
+		"[root] module.common_data.data.aws_subnet.subnets" -> "[root] module.common_data.var.max_number_of_azs"
+		"[root] module.common_data.data.aws_subnet_ids.selected" -> "[root] module.common_data.data.aws_vpc.default"
+		"[root] module.common_data.data.aws_vpc.default" -> "[root] provider.aws"
+		"[root] module.common_data.output.availability_zones" -> "[root] module.common_data.data.aws_subnet.subnets"
+		"[root] module.common_data.output.elb_security_groups" -> "[root] module.common_data.data.aws_security_group.elb_security_groups"
+		"[root] module.common_data.output.iam_instance_profile" -> "[root] module.common_data.data.aws_iam_instance_profile.selected"
+		"[root] module.common_data.output.route53_zone_id" -> "[root] module.common_data.data.aws_route53_zone.selected"
+		"[root] module.common_data.output.security_groups" -> "[root] module.common_data.data.aws_security_group.security_groups"
+		"[root] module.common_data.output.subnet_ids" -> "[root] module.common_data.data.aws_subnet.subnets"
+		"[root] module.common_data.output.vpc_id" -> "[root] module.common_data.data.aws_vpc.default"
+		"[root] module.common_data.var.max_number_of_azs" -> "[root] var.max_number_of_azs"
+		"[root] module.common_data.var.route53_zone_name" -> "[root] var.route53_zone_name"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.connection_draining"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.connection_draining_timeout"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.cross_zone_load_balancing"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.health_check_path"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.healthy_threshold"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.idle_timeout"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.internal"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.interval"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.name_prefix"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.security_groups"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.ssl_certificate_id"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.subnet_ids"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.tags"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.timeout"
+		"[root] module.elb.aws_elb.elb" -> "[root] module.elb.var.unhealthy_threshold"
+		"[root] module.elb.output.dns_name" -> "[root] module.elb.aws_elb.elb"
+		"[root] module.elb.output.name" -> "[root] module.elb.aws_elb.elb"
+		"[root] module.elb.output.zone_id" -> "[root] module.elb.aws_elb.elb"
+		"[root] module.elb.var.name_prefix" -> "[root] var.elb_name_prefix"
+		"[root] module.elb.var.security_groups" -> "[root] module.common_data.output.elb_security_groups"
+		"[root] module.elb.var.ssl_certificate_id" -> "[root] var.acm_certificate_id"
+		"[root] module.elb.var.subnet_ids" -> "[root] module.common_data.output.subnet_ids"
+		"[root] module.elb.var.tags" -> "[root] var.tags"
+		"[root] module.route53.aws_route53_record.dmi_api" -> "[root] module.route53.var.cname"
+		"[root] module.route53.aws_route53_record.dmi_api" -> "[root] module.route53.var.elb_dns_name"
+		"[root] module.route53.aws_route53_record.dmi_api" -> "[root] module.route53.var.elb_zone_id"
+		"[root] module.route53.aws_route53_record.dmi_api" -> "[root] module.route53.var.route53_zone_id"
+		"[root] module.route53.var.cname" -> "[root] var.api_cname"
+		"[root] module.route53.var.elb_dns_name" -> "[root] module.elb.output.dns_name"
+		"[root] module.route53.var.elb_zone_id" -> "[root] module.elb.output.zone_id"
+		"[root] module.route53.var.route53_zone_id" -> "[root] module.common_data.output.route53_zone_id"
+		"[root] provider.aws (close)" -> "[root] module.asg.aws_autoscaling_group.dmi_asg"
+		"[root] provider.aws (close)" -> "[root] module.route53.aws_route53_record.dmi_api"
+		"[root] provider.aws" -> "[root] var.region"
+		"[root] provider.null (close)" -> "[root] module.asg.data.null_data_source.asg_tags"
+		"[root] provider.template (close)" -> "[root] module.chef-max.data.template_file.linux_userdata"
+		"[root] provider.template (close)" -> "[root] module.chef-max.data.template_file.windows_userdata"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider.aws (close)"
+		"[root] root" -> "[root] provider.null (close)"
+		"[root] root" -> "[root] provider.template (close)"
+	}
+}
+

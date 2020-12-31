@@ -1,0 +1,156 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_route53_record.dmi-api-vnext" [label = "aws_route53_record.dmi-api-vnext", shape = "box"]
+		"[root] data.aws_iam_role.dmi_api_vnext_role" [label = "data.aws_iam_role.dmi_api_vnext_role", shape = "box"]
+		"[root] data.aws_route53_zone.selected" [label = "data.aws_route53_zone.selected", shape = "box"]
+		"[root] data.aws_security_group.app" [label = "data.aws_security_group.app", shape = "box"]
+		"[root] data.aws_security_group.djif_default" [label = "data.aws_security_group.djif_default", shape = "box"]
+		"[root] data.aws_security_group.djin_standard" [label = "data.aws_security_group.djin_standard", shape = "box"]
+		"[root] data.aws_security_group.elb" [label = "data.aws_security_group.elb", shape = "box"]
+		"[root] data.aws_security_group.sgdmiapi_app" [label = "data.aws_security_group.sgdmiapi_app", shape = "box"]
+		"[root] data.aws_subnet_ids.protected" [label = "data.aws_subnet_ids.protected", shape = "box"]
+		"[root] data.aws_vpc.pib" [label = "data.aws_vpc.pib", shape = "box"]
+		"[root] data.template_file.task" [label = "data.template_file.task", shape = "box"]
+		"[root] module.ecs_dmi_api_vnext.aws_alb.alb" [label = "module.ecs_dmi_api_vnext.aws_alb.alb", shape = "box"]
+		"[root] module.ecs_dmi_api_vnext.aws_alb_listener.listener" [label = "module.ecs_dmi_api_vnext.aws_alb_listener.listener", shape = "box"]
+		"[root] module.ecs_dmi_api_vnext.aws_alb_listener.redirect" [label = "module.ecs_dmi_api_vnext.aws_alb_listener.redirect", shape = "box"]
+		"[root] module.ecs_dmi_api_vnext.aws_alb_target_group.target_group" [label = "module.ecs_dmi_api_vnext.aws_alb_target_group.target_group", shape = "box"]
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_cluster.cluster" [label = "module.ecs_dmi_api_vnext.aws_ecs_cluster.cluster", shape = "box"]
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_service.service" [label = "module.ecs_dmi_api_vnext.aws_ecs_service.service", shape = "box"]
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_task_definition.task" [label = "module.ecs_dmi_api_vnext.aws_ecs_task_definition.task", shape = "box"]
+		"[root] module.ecs_dmi_api_vnext.output.elb_dns_name" [label = "module.ecs_dmi_api_vnext.output.elb_dns_name", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.output.elb_zone_id" [label = "module.ecs_dmi_api_vnext.output.elb_zone_id", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.acm_certificate_arn" [label = "module.ecs_dmi_api_vnext.var.acm_certificate_arn", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.cluster_name" [label = "module.ecs_dmi_api_vnext.var.cluster_name", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.container_name" [label = "module.ecs_dmi_api_vnext.var.container_name", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.container_port" [label = "module.ecs_dmi_api_vnext.var.container_port", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.desired_tasks" [label = "module.ecs_dmi_api_vnext.var.desired_tasks", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.elb_security_groups" [label = "module.ecs_dmi_api_vnext.var.elb_security_groups", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.elb_subnets" [label = "module.ecs_dmi_api_vnext.var.elb_subnets", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.execution_role_arn" [label = "module.ecs_dmi_api_vnext.var.execution_role_arn", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.fargate_security_groups" [label = "module.ecs_dmi_api_vnext.var.fargate_security_groups", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.health_check_path" [label = "module.ecs_dmi_api_vnext.var.health_check_path", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.internal_elb" [label = "module.ecs_dmi_api_vnext.var.internal_elb", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.region" [label = "module.ecs_dmi_api_vnext.var.region", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.tags" [label = "module.ecs_dmi_api_vnext.var.tags", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.task_cpu" [label = "module.ecs_dmi_api_vnext.var.task_cpu", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.task_memory" [label = "module.ecs_dmi_api_vnext.var.task_memory", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.task_role_arn" [label = "module.ecs_dmi_api_vnext.var.task_role_arn", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.task_subnets" [label = "module.ecs_dmi_api_vnext.var.task_subnets", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.task_template" [label = "module.ecs_dmi_api_vnext.var.task_template", shape = "note"]
+		"[root] module.ecs_dmi_api_vnext.var.vpc_id" [label = "module.ecs_dmi_api_vnext.var.vpc_id", shape = "note"]
+		"[root] null_resource.redeploy" [label = "null_resource.redeploy", shape = "box"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] provider.null" [label = "provider.null", shape = "diamond"]
+		"[root] provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] var.acm_certificate_arn" [label = "var.acm_certificate_arn", shape = "note"]
+		"[root] var.cluster_name" [label = "var.cluster_name", shape = "note"]
+		"[root] var.container_image" [label = "var.container_image", shape = "note"]
+		"[root] var.container_name" [label = "var.container_name", shape = "note"]
+		"[root] var.container_port" [label = "var.container_port", shape = "note"]
+		"[root] var.cpu" [label = "var.cpu", shape = "note"]
+		"[root] var.desired_tasks" [label = "var.desired_tasks", shape = "note"]
+		"[root] var.domain_name" [label = "var.domain_name", shape = "note"]
+		"[root] var.health_check" [label = "var.health_check", shape = "note"]
+		"[root] var.memory" [label = "var.memory", shape = "note"]
+		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] var.tags" [label = "var.tags", shape = "note"]
+		"[root] var.zone_id" [label = "var.zone_id", shape = "note"]
+		"[root] aws_route53_record.dmi-api-vnext" -> "[root] data.aws_route53_zone.selected"
+		"[root] aws_route53_record.dmi-api-vnext" -> "[root] module.ecs_dmi_api_vnext.output.elb_dns_name"
+		"[root] aws_route53_record.dmi-api-vnext" -> "[root] module.ecs_dmi_api_vnext.output.elb_zone_id"
+		"[root] aws_route53_record.dmi-api-vnext" -> "[root] var.domain_name"
+		"[root] data.aws_iam_role.dmi_api_vnext_role" -> "[root] provider.aws"
+		"[root] data.aws_route53_zone.selected" -> "[root] provider.aws"
+		"[root] data.aws_route53_zone.selected" -> "[root] var.zone_id"
+		"[root] data.aws_security_group.app" -> "[root] provider.aws"
+		"[root] data.aws_security_group.djif_default" -> "[root] provider.aws"
+		"[root] data.aws_security_group.djin_standard" -> "[root] provider.aws"
+		"[root] data.aws_security_group.elb" -> "[root] provider.aws"
+		"[root] data.aws_security_group.sgdmiapi_app" -> "[root] provider.aws"
+		"[root] data.aws_subnet_ids.protected" -> "[root] data.aws_vpc.pib"
+		"[root] data.aws_vpc.pib" -> "[root] provider.aws"
+		"[root] data.template_file.task" -> "[root] provider.template"
+		"[root] data.template_file.task" -> "[root] var.container_image"
+		"[root] data.template_file.task" -> "[root] var.container_name"
+		"[root] data.template_file.task" -> "[root] var.container_port"
+		"[root] data.template_file.task" -> "[root] var.cpu"
+		"[root] data.template_file.task" -> "[root] var.memory"
+		"[root] data.template_file.task" -> "[root] var.region"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route53_record.dmi-api-vnext"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.ecs_dmi_api_vnext.aws_alb_listener.listener"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.ecs_dmi_api_vnext.aws_alb_listener.redirect"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.ecs_dmi_api_vnext.aws_ecs_service.service"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.ecs_dmi_api_vnext.var.region"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] null_resource.redeploy"
+		"[root] module.ecs_dmi_api_vnext.aws_alb.alb" -> "[root] module.ecs_dmi_api_vnext.var.cluster_name"
+		"[root] module.ecs_dmi_api_vnext.aws_alb.alb" -> "[root] module.ecs_dmi_api_vnext.var.elb_security_groups"
+		"[root] module.ecs_dmi_api_vnext.aws_alb.alb" -> "[root] module.ecs_dmi_api_vnext.var.elb_subnets"
+		"[root] module.ecs_dmi_api_vnext.aws_alb.alb" -> "[root] module.ecs_dmi_api_vnext.var.internal_elb"
+		"[root] module.ecs_dmi_api_vnext.aws_alb.alb" -> "[root] module.ecs_dmi_api_vnext.var.tags"
+		"[root] module.ecs_dmi_api_vnext.aws_alb_listener.listener" -> "[root] module.ecs_dmi_api_vnext.aws_alb_target_group.target_group"
+		"[root] module.ecs_dmi_api_vnext.aws_alb_listener.listener" -> "[root] module.ecs_dmi_api_vnext.var.acm_certificate_arn"
+		"[root] module.ecs_dmi_api_vnext.aws_alb_listener.redirect" -> "[root] module.ecs_dmi_api_vnext.aws_alb_target_group.target_group"
+		"[root] module.ecs_dmi_api_vnext.aws_alb_target_group.target_group" -> "[root] module.ecs_dmi_api_vnext.aws_alb.alb"
+		"[root] module.ecs_dmi_api_vnext.aws_alb_target_group.target_group" -> "[root] module.ecs_dmi_api_vnext.var.container_port"
+		"[root] module.ecs_dmi_api_vnext.aws_alb_target_group.target_group" -> "[root] module.ecs_dmi_api_vnext.var.health_check_path"
+		"[root] module.ecs_dmi_api_vnext.aws_alb_target_group.target_group" -> "[root] module.ecs_dmi_api_vnext.var.vpc_id"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_cluster.cluster" -> "[root] module.ecs_dmi_api_vnext.var.cluster_name"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_cluster.cluster" -> "[root] module.ecs_dmi_api_vnext.var.tags"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_cluster.cluster" -> "[root] provider.aws"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_service.service" -> "[root] module.ecs_dmi_api_vnext.aws_alb_target_group.target_group"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_service.service" -> "[root] module.ecs_dmi_api_vnext.aws_ecs_task_definition.task"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_service.service" -> "[root] module.ecs_dmi_api_vnext.var.container_name"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_service.service" -> "[root] module.ecs_dmi_api_vnext.var.desired_tasks"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_service.service" -> "[root] module.ecs_dmi_api_vnext.var.fargate_security_groups"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_service.service" -> "[root] module.ecs_dmi_api_vnext.var.task_subnets"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_task_definition.task" -> "[root] module.ecs_dmi_api_vnext.aws_ecs_cluster.cluster"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_task_definition.task" -> "[root] module.ecs_dmi_api_vnext.var.execution_role_arn"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_task_definition.task" -> "[root] module.ecs_dmi_api_vnext.var.task_cpu"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_task_definition.task" -> "[root] module.ecs_dmi_api_vnext.var.task_memory"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_task_definition.task" -> "[root] module.ecs_dmi_api_vnext.var.task_role_arn"
+		"[root] module.ecs_dmi_api_vnext.aws_ecs_task_definition.task" -> "[root] module.ecs_dmi_api_vnext.var.task_template"
+		"[root] module.ecs_dmi_api_vnext.output.elb_dns_name" -> "[root] module.ecs_dmi_api_vnext.aws_alb.alb"
+		"[root] module.ecs_dmi_api_vnext.output.elb_zone_id" -> "[root] module.ecs_dmi_api_vnext.aws_alb.alb"
+		"[root] module.ecs_dmi_api_vnext.var.acm_certificate_arn" -> "[root] var.acm_certificate_arn"
+		"[root] module.ecs_dmi_api_vnext.var.cluster_name" -> "[root] var.cluster_name"
+		"[root] module.ecs_dmi_api_vnext.var.container_name" -> "[root] var.container_name"
+		"[root] module.ecs_dmi_api_vnext.var.container_port" -> "[root] var.container_port"
+		"[root] module.ecs_dmi_api_vnext.var.desired_tasks" -> "[root] var.desired_tasks"
+		"[root] module.ecs_dmi_api_vnext.var.elb_security_groups" -> "[root] data.aws_security_group.djif_default"
+		"[root] module.ecs_dmi_api_vnext.var.elb_security_groups" -> "[root] data.aws_security_group.elb"
+		"[root] module.ecs_dmi_api_vnext.var.elb_subnets" -> "[root] data.aws_subnet_ids.protected"
+		"[root] module.ecs_dmi_api_vnext.var.execution_role_arn" -> "[root] data.aws_iam_role.dmi_api_vnext_role"
+		"[root] module.ecs_dmi_api_vnext.var.fargate_security_groups" -> "[root] data.aws_security_group.app"
+		"[root] module.ecs_dmi_api_vnext.var.fargate_security_groups" -> "[root] data.aws_security_group.djif_default"
+		"[root] module.ecs_dmi_api_vnext.var.fargate_security_groups" -> "[root] data.aws_security_group.djin_standard"
+		"[root] module.ecs_dmi_api_vnext.var.fargate_security_groups" -> "[root] data.aws_security_group.sgdmiapi_app"
+		"[root] module.ecs_dmi_api_vnext.var.health_check_path" -> "[root] var.health_check"
+		"[root] module.ecs_dmi_api_vnext.var.region" -> "[root] var.region"
+		"[root] module.ecs_dmi_api_vnext.var.tags" -> "[root] var.tags"
+		"[root] module.ecs_dmi_api_vnext.var.task_cpu" -> "[root] var.cpu"
+		"[root] module.ecs_dmi_api_vnext.var.task_memory" -> "[root] var.memory"
+		"[root] module.ecs_dmi_api_vnext.var.task_role_arn" -> "[root] data.aws_iam_role.dmi_api_vnext_role"
+		"[root] module.ecs_dmi_api_vnext.var.task_subnets" -> "[root] data.aws_subnet_ids.protected"
+		"[root] module.ecs_dmi_api_vnext.var.task_template" -> "[root] data.template_file.task"
+		"[root] module.ecs_dmi_api_vnext.var.vpc_id" -> "[root] data.aws_vpc.pib"
+		"[root] null_resource.redeploy" -> "[root] provider.null"
+		"[root] null_resource.redeploy" -> "[root] provisioner.local-exec"
+		"[root] provider.aws (close)" -> "[root] aws_route53_record.dmi-api-vnext"
+		"[root] provider.aws (close)" -> "[root] module.ecs_dmi_api_vnext.aws_alb_listener.listener"
+		"[root] provider.aws (close)" -> "[root] module.ecs_dmi_api_vnext.aws_alb_listener.redirect"
+		"[root] provider.aws (close)" -> "[root] module.ecs_dmi_api_vnext.aws_ecs_service.service"
+		"[root] provider.aws" -> "[root] var.region"
+		"[root] provider.null (close)" -> "[root] null_resource.redeploy"
+		"[root] provider.template (close)" -> "[root] data.template_file.task"
+		"[root] provisioner.local-exec (close)" -> "[root] null_resource.redeploy"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider.aws (close)"
+		"[root] root" -> "[root] provider.null (close)"
+		"[root] root" -> "[root] provider.template (close)"
+		"[root] root" -> "[root] provisioner.local-exec (close)"
+	}
+}
+

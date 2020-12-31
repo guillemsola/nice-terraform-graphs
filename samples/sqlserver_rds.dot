@@ -1,0 +1,411 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] data.template_file.input_json" [label = "data.template_file.input_json", shape = "box"]
+		"[root] local.copy_snapshot" [label = "local.copy_snapshot", shape = "note"]
+		"[root] local.create_snapshot" [label = "local.create_snapshot", shape = "note"]
+		"[root] local.delete_snapshot" [label = "local.delete_snapshot", shape = "note"]
+		"[root] local.lambda_files_path" [label = "local.lambda_files_path", shape = "note"]
+		"[root] module.common.data.aws_iam_role.lambda_role" [label = "module.common.data.aws_iam_role.lambda_role", shape = "box"]
+		"[root] module.common.data.aws_iam_role.rds_restore_role" [label = "module.common.data.aws_iam_role.rds_restore_role", shape = "box"]
+		"[root] module.common.data.aws_route53_zone.selected" [label = "module.common.data.aws_route53_zone.selected", shape = "box"]
+		"[root] module.common.data.aws_security_group.security_groups" [label = "module.common.data.aws_security_group.security_groups", shape = "box"]
+		"[root] module.common.data.aws_security_group.security_groups_lambda" [label = "module.common.data.aws_security_group.security_groups_lambda", shape = "box"]
+		"[root] module.common.data.aws_subnet.private_subnets" [label = "module.common.data.aws_subnet.private_subnets", shape = "box"]
+		"[root] module.common.data.aws_subnet.protected_subnets" [label = "module.common.data.aws_subnet.protected_subnets", shape = "box"]
+		"[root] module.common.data.aws_subnet_ids.private_subnets" [label = "module.common.data.aws_subnet_ids.private_subnets", shape = "box"]
+		"[root] module.common.data.aws_subnet_ids.protected_subnets" [label = "module.common.data.aws_subnet_ids.protected_subnets", shape = "box"]
+		"[root] module.common.data.aws_vpc.default" [label = "module.common.data.aws_vpc.default", shape = "box"]
+		"[root] module.common.output.availability_zones" [label = "module.common.output.availability_zones", shape = "note"]
+		"[root] module.common.output.lambda_role" [label = "module.common.output.lambda_role", shape = "note"]
+		"[root] module.common.output.private_subnet_ids" [label = "module.common.output.private_subnet_ids", shape = "note"]
+		"[root] module.common.output.rds_restore_role" [label = "module.common.output.rds_restore_role", shape = "note"]
+		"[root] module.common.output.route53_zone_id" [label = "module.common.output.route53_zone_id", shape = "note"]
+		"[root] module.common.output.security_groups" [label = "module.common.output.security_groups", shape = "note"]
+		"[root] module.common.output.security_groups_lambda" [label = "module.common.output.security_groups_lambda", shape = "note"]
+		"[root] module.common.output.subnet_ids" [label = "module.common.output.subnet_ids", shape = "note"]
+		"[root] module.common.output.vpc_id" [label = "module.common.output.vpc_id", shape = "note"]
+		"[root] module.common.var.lambda_role_name" [label = "module.common.var.lambda_role_name", shape = "note"]
+		"[root] module.common.var.max_number_of_azs" [label = "module.common.var.max_number_of_azs", shape = "note"]
+		"[root] module.common.var.private_subnets_name" [label = "module.common.var.private_subnets_name", shape = "note"]
+		"[root] module.common.var.protected_subnets_name" [label = "module.common.var.protected_subnets_name", shape = "note"]
+		"[root] module.common.var.rds_restore_role_name" [label = "module.common.var.rds_restore_role_name", shape = "note"]
+		"[root] module.common.var.route53_zone_name" [label = "module.common.var.route53_zone_name", shape = "note"]
+		"[root] module.common.var.sg_names" [label = "module.common.var.sg_names", shape = "note"]
+		"[root] module.common.var.sg_names_lambda" [label = "module.common.var.sg_names_lambda", shape = "note"]
+		"[root] module.common.var.vpc_name" [label = "module.common.var.vpc_name", shape = "note"]
+		"[root] module.dns.aws_route53_record.dmi_db" [label = "module.dns.aws_route53_record.dmi_db", shape = "box"]
+		"[root] module.dns.var.name" [label = "module.dns.var.name", shape = "note"]
+		"[root] module.dns.var.records" [label = "module.dns.var.records", shape = "note"]
+		"[root] module.dns.var.ttl" [label = "module.dns.var.ttl", shape = "note"]
+		"[root] module.dns.var.zone_id" [label = "module.dns.var.zone_id", shape = "note"]
+		"[root] module.lambda_copy_snapshot.aws_cloudwatch_event_rule.rule" [label = "module.lambda_copy_snapshot.aws_cloudwatch_event_rule.rule", shape = "box"]
+		"[root] module.lambda_copy_snapshot.aws_cloudwatch_event_target.target" [label = "module.lambda_copy_snapshot.aws_cloudwatch_event_target.target", shape = "box"]
+		"[root] module.lambda_copy_snapshot.aws_lambda_function.lambda" [label = "module.lambda_copy_snapshot.aws_lambda_function.lambda", shape = "box"]
+		"[root] module.lambda_copy_snapshot.aws_lambda_permission.eds_permission" [label = "module.lambda_copy_snapshot.aws_lambda_permission.eds_permission", shape = "box"]
+		"[root] module.lambda_copy_snapshot.local.file" [label = "module.lambda_copy_snapshot.local.file", shape = "note"]
+		"[root] module.lambda_copy_snapshot.local.function_name" [label = "module.lambda_copy_snapshot.local.function_name", shape = "note"]
+		"[root] module.lambda_copy_snapshot.output.function_name" [label = "module.lambda_copy_snapshot.output.function_name", shape = "note"]
+		"[root] module.lambda_copy_snapshot.output.lambda_arn" [label = "module.lambda_copy_snapshot.output.lambda_arn", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.file_name" [label = "module.lambda_copy_snapshot.var.file_name", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.file_path" [label = "module.lambda_copy_snapshot.var.file_path", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.function_name" [label = "module.lambda_copy_snapshot.var.function_name", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.is_enabled" [label = "module.lambda_copy_snapshot.var.is_enabled", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.role" [label = "module.lambda_copy_snapshot.var.role", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.rule_description" [label = "module.lambda_copy_snapshot.var.rule_description", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.rule_schedule_expression" [label = "module.lambda_copy_snapshot.var.rule_schedule_expression", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.runtime" [label = "module.lambda_copy_snapshot.var.runtime", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.security_group_ids" [label = "module.lambda_copy_snapshot.var.security_group_ids", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.stack_color" [label = "module.lambda_copy_snapshot.var.stack_color", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.subnet_ids" [label = "module.lambda_copy_snapshot.var.subnet_ids", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.tags" [label = "module.lambda_copy_snapshot.var.tags", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.target_input_json" [label = "module.lambda_copy_snapshot.var.target_input_json", shape = "note"]
+		"[root] module.lambda_copy_snapshot.var.timeout" [label = "module.lambda_copy_snapshot.var.timeout", shape = "note"]
+		"[root] module.lambda_create_snapshot.aws_cloudwatch_event_rule.rule" [label = "module.lambda_create_snapshot.aws_cloudwatch_event_rule.rule", shape = "box"]
+		"[root] module.lambda_create_snapshot.aws_cloudwatch_event_target.target" [label = "module.lambda_create_snapshot.aws_cloudwatch_event_target.target", shape = "box"]
+		"[root] module.lambda_create_snapshot.aws_lambda_function.lambda" [label = "module.lambda_create_snapshot.aws_lambda_function.lambda", shape = "box"]
+		"[root] module.lambda_create_snapshot.aws_lambda_permission.eds_permission" [label = "module.lambda_create_snapshot.aws_lambda_permission.eds_permission", shape = "box"]
+		"[root] module.lambda_create_snapshot.local.file" [label = "module.lambda_create_snapshot.local.file", shape = "note"]
+		"[root] module.lambda_create_snapshot.local.function_name" [label = "module.lambda_create_snapshot.local.function_name", shape = "note"]
+		"[root] module.lambda_create_snapshot.output.function_name" [label = "module.lambda_create_snapshot.output.function_name", shape = "note"]
+		"[root] module.lambda_create_snapshot.output.lambda_arn" [label = "module.lambda_create_snapshot.output.lambda_arn", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.file_name" [label = "module.lambda_create_snapshot.var.file_name", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.file_path" [label = "module.lambda_create_snapshot.var.file_path", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.function_name" [label = "module.lambda_create_snapshot.var.function_name", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.is_enabled" [label = "module.lambda_create_snapshot.var.is_enabled", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.role" [label = "module.lambda_create_snapshot.var.role", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.rule_description" [label = "module.lambda_create_snapshot.var.rule_description", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.rule_schedule_expression" [label = "module.lambda_create_snapshot.var.rule_schedule_expression", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.runtime" [label = "module.lambda_create_snapshot.var.runtime", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.security_group_ids" [label = "module.lambda_create_snapshot.var.security_group_ids", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.stack_color" [label = "module.lambda_create_snapshot.var.stack_color", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.subnet_ids" [label = "module.lambda_create_snapshot.var.subnet_ids", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.tags" [label = "module.lambda_create_snapshot.var.tags", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.target_input_json" [label = "module.lambda_create_snapshot.var.target_input_json", shape = "note"]
+		"[root] module.lambda_create_snapshot.var.timeout" [label = "module.lambda_create_snapshot.var.timeout", shape = "note"]
+		"[root] module.lambda_delete_snapshot.aws_cloudwatch_event_rule.rule" [label = "module.lambda_delete_snapshot.aws_cloudwatch_event_rule.rule", shape = "box"]
+		"[root] module.lambda_delete_snapshot.aws_cloudwatch_event_target.target" [label = "module.lambda_delete_snapshot.aws_cloudwatch_event_target.target", shape = "box"]
+		"[root] module.lambda_delete_snapshot.aws_lambda_function.lambda" [label = "module.lambda_delete_snapshot.aws_lambda_function.lambda", shape = "box"]
+		"[root] module.lambda_delete_snapshot.aws_lambda_permission.eds_permission" [label = "module.lambda_delete_snapshot.aws_lambda_permission.eds_permission", shape = "box"]
+		"[root] module.lambda_delete_snapshot.local.file" [label = "module.lambda_delete_snapshot.local.file", shape = "note"]
+		"[root] module.lambda_delete_snapshot.local.function_name" [label = "module.lambda_delete_snapshot.local.function_name", shape = "note"]
+		"[root] module.lambda_delete_snapshot.output.function_name" [label = "module.lambda_delete_snapshot.output.function_name", shape = "note"]
+		"[root] module.lambda_delete_snapshot.output.lambda_arn" [label = "module.lambda_delete_snapshot.output.lambda_arn", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.file_name" [label = "module.lambda_delete_snapshot.var.file_name", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.file_path" [label = "module.lambda_delete_snapshot.var.file_path", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.function_name" [label = "module.lambda_delete_snapshot.var.function_name", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.is_enabled" [label = "module.lambda_delete_snapshot.var.is_enabled", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.role" [label = "module.lambda_delete_snapshot.var.role", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.rule_description" [label = "module.lambda_delete_snapshot.var.rule_description", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.rule_schedule_expression" [label = "module.lambda_delete_snapshot.var.rule_schedule_expression", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.runtime" [label = "module.lambda_delete_snapshot.var.runtime", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.security_group_ids" [label = "module.lambda_delete_snapshot.var.security_group_ids", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.stack_color" [label = "module.lambda_delete_snapshot.var.stack_color", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.subnet_ids" [label = "module.lambda_delete_snapshot.var.subnet_ids", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.tags" [label = "module.lambda_delete_snapshot.var.tags", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.target_input_json" [label = "module.lambda_delete_snapshot.var.target_input_json", shape = "note"]
+		"[root] module.lambda_delete_snapshot.var.timeout" [label = "module.lambda_delete_snapshot.var.timeout", shape = "note"]
+		"[root] module.rds_instance.aws_db_instance.dmidb" [label = "module.rds_instance.aws_db_instance.dmidb", shape = "box"]
+		"[root] module.rds_instance.data.aws_db_snapshot.snapshot" [label = "module.rds_instance.data.aws_db_snapshot.snapshot", shape = "box"]
+		"[root] module.rds_instance.output.address" [label = "module.rds_instance.output.address", shape = "note"]
+		"[root] module.rds_instance.var.allocated_storage" [label = "module.rds_instance.var.allocated_storage", shape = "note"]
+		"[root] module.rds_instance.var.allow_major_version_upgrade" [label = "module.rds_instance.var.allow_major_version_upgrade", shape = "note"]
+		"[root] module.rds_instance.var.auto_minor_version_upgrade" [label = "module.rds_instance.var.auto_minor_version_upgrade", shape = "note"]
+		"[root] module.rds_instance.var.availability_zones" [label = "module.rds_instance.var.availability_zones", shape = "note"]
+		"[root] module.rds_instance.var.backup_retention_period" [label = "module.rds_instance.var.backup_retention_period", shape = "note"]
+		"[root] module.rds_instance.var.copy_tags_to_snapshot" [label = "module.rds_instance.var.copy_tags_to_snapshot", shape = "note"]
+		"[root] module.rds_instance.var.db_subnet_group_name" [label = "module.rds_instance.var.db_subnet_group_name", shape = "note"]
+		"[root] module.rds_instance.var.db_vpc_security_group_ids" [label = "module.rds_instance.var.db_vpc_security_group_ids", shape = "note"]
+		"[root] module.rds_instance.var.deletion_protection" [label = "module.rds_instance.var.deletion_protection", shape = "note"]
+		"[root] module.rds_instance.var.engine" [label = "module.rds_instance.var.engine", shape = "note"]
+		"[root] module.rds_instance.var.engine_version" [label = "module.rds_instance.var.engine_version", shape = "note"]
+		"[root] module.rds_instance.var.final_snapshot_identifier" [label = "module.rds_instance.var.final_snapshot_identifier", shape = "note"]
+		"[root] module.rds_instance.var.identifier" [label = "module.rds_instance.var.identifier", shape = "note"]
+		"[root] module.rds_instance.var.instance_class" [label = "module.rds_instance.var.instance_class", shape = "note"]
+		"[root] module.rds_instance.var.license_model" [label = "module.rds_instance.var.license_model", shape = "note"]
+		"[root] module.rds_instance.var.max_allocated_storage" [label = "module.rds_instance.var.max_allocated_storage", shape = "note"]
+		"[root] module.rds_instance.var.multi_az" [label = "module.rds_instance.var.multi_az", shape = "note"]
+		"[root] module.rds_instance.var.option_group_name" [label = "module.rds_instance.var.option_group_name", shape = "note"]
+		"[root] module.rds_instance.var.parameter_group_name" [label = "module.rds_instance.var.parameter_group_name", shape = "note"]
+		"[root] module.rds_instance.var.password" [label = "module.rds_instance.var.password", shape = "note"]
+		"[root] module.rds_instance.var.skip_final_snapshot" [label = "module.rds_instance.var.skip_final_snapshot", shape = "note"]
+		"[root] module.rds_instance.var.snapshot_identifier" [label = "module.rds_instance.var.snapshot_identifier", shape = "note"]
+		"[root] module.rds_instance.var.storage_encrypted" [label = "module.rds_instance.var.storage_encrypted", shape = "note"]
+		"[root] module.rds_instance.var.storage_type" [label = "module.rds_instance.var.storage_type", shape = "note"]
+		"[root] module.rds_instance.var.subnet_ids" [label = "module.rds_instance.var.subnet_ids", shape = "note"]
+		"[root] module.rds_instance.var.tags" [label = "module.rds_instance.var.tags", shape = "note"]
+		"[root] module.rds_instance.var.timezone" [label = "module.rds_instance.var.timezone", shape = "note"]
+		"[root] module.rds_instance.var.username" [label = "module.rds_instance.var.username", shape = "note"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] var.allocated_storage" [label = "var.allocated_storage", shape = "note"]
+		"[root] var.allow_major_version_upgrade" [label = "var.allow_major_version_upgrade", shape = "note"]
+		"[root] var.asg_desired" [label = "var.asg_desired", shape = "note"]
+		"[root] var.asg_max" [label = "var.asg_max", shape = "note"]
+		"[root] var.asg_min" [label = "var.asg_min", shape = "note"]
+		"[root] var.auto_minor_version_upgrade" [label = "var.auto_minor_version_upgrade", shape = "note"]
+		"[root] var.aws_region" [label = "var.aws_region", shape = "note"]
+		"[root] var.backup_retention_period" [label = "var.backup_retention_period", shape = "note"]
+		"[root] var.copy_tags_to_snapshot" [label = "var.copy_tags_to_snapshot", shape = "note"]
+		"[root] var.db_cname" [label = "var.db_cname", shape = "note"]
+		"[root] var.db_subnet_group_name" [label = "var.db_subnet_group_name", shape = "note"]
+		"[root] var.deletion_protection" [label = "var.deletion_protection", shape = "note"]
+		"[root] var.engine" [label = "var.engine", shape = "note"]
+		"[root] var.engine_version" [label = "var.engine_version", shape = "note"]
+		"[root] var.final_snapshot_identifier" [label = "var.final_snapshot_identifier", shape = "note"]
+		"[root] var.identifier" [label = "var.identifier", shape = "note"]
+		"[root] var.instance_class" [label = "var.instance_class", shape = "note"]
+		"[root] var.license_model" [label = "var.license_model", shape = "note"]
+		"[root] var.max_allocated_storage" [label = "var.max_allocated_storage", shape = "note"]
+		"[root] var.multi_az" [label = "var.multi_az", shape = "note"]
+		"[root] var.option_group_name" [label = "var.option_group_name", shape = "note"]
+		"[root] var.parameter_group_name" [label = "var.parameter_group_name", shape = "note"]
+		"[root] var.password" [label = "var.password", shape = "note"]
+		"[root] var.route53_zone_name" [label = "var.route53_zone_name", shape = "note"]
+		"[root] var.skip_final_snapshot" [label = "var.skip_final_snapshot", shape = "note"]
+		"[root] var.stack_color" [label = "var.stack_color", shape = "note"]
+		"[root] var.storage_encrypted" [label = "var.storage_encrypted", shape = "note"]
+		"[root] var.storage_type" [label = "var.storage_type", shape = "note"]
+		"[root] var.tags" [label = "var.tags", shape = "note"]
+		"[root] var.timezone" [label = "var.timezone", shape = "note"]
+		"[root] var.username" [label = "var.username", shape = "note"]
+		"[root] data.template_file.input_json" -> "[root] provider.template"
+		"[root] data.template_file.input_json" -> "[root] var.db_subnet_group_name"
+		"[root] data.template_file.input_json" -> "[root] var.identifier"
+		"[root] data.template_file.input_json" -> "[root] var.instance_class"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.common.output.rds_restore_role"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.common.output.vpc_id"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.dns.aws_route53_record.dmi_db"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_copy_snapshot.aws_cloudwatch_event_target.target"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_copy_snapshot.aws_lambda_permission.eds_permission"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_copy_snapshot.output.function_name"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_copy_snapshot.output.lambda_arn"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_create_snapshot.aws_cloudwatch_event_target.target"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_create_snapshot.aws_lambda_permission.eds_permission"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_create_snapshot.output.function_name"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_create_snapshot.output.lambda_arn"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_delete_snapshot.aws_cloudwatch_event_target.target"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_delete_snapshot.aws_lambda_permission.eds_permission"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_delete_snapshot.output.function_name"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.lambda_delete_snapshot.output.lambda_arn"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.rds_instance.var.availability_zones"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.rds_instance.var.subnet_ids"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.asg_desired"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.asg_max"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.asg_min"
+		"[root] module.common.data.aws_iam_role.lambda_role" -> "[root] module.common.var.lambda_role_name"
+		"[root] module.common.data.aws_iam_role.lambda_role" -> "[root] provider.aws"
+		"[root] module.common.data.aws_iam_role.rds_restore_role" -> "[root] module.common.var.rds_restore_role_name"
+		"[root] module.common.data.aws_iam_role.rds_restore_role" -> "[root] provider.aws"
+		"[root] module.common.data.aws_route53_zone.selected" -> "[root] module.common.var.route53_zone_name"
+		"[root] module.common.data.aws_route53_zone.selected" -> "[root] provider.aws"
+		"[root] module.common.data.aws_security_group.security_groups" -> "[root] module.common.var.sg_names"
+		"[root] module.common.data.aws_security_group.security_groups" -> "[root] provider.aws"
+		"[root] module.common.data.aws_security_group.security_groups_lambda" -> "[root] module.common.var.sg_names_lambda"
+		"[root] module.common.data.aws_security_group.security_groups_lambda" -> "[root] provider.aws"
+		"[root] module.common.data.aws_subnet.private_subnets" -> "[root] module.common.data.aws_subnet_ids.private_subnets"
+		"[root] module.common.data.aws_subnet.private_subnets" -> "[root] module.common.var.max_number_of_azs"
+		"[root] module.common.data.aws_subnet.protected_subnets" -> "[root] module.common.data.aws_subnet_ids.protected_subnets"
+		"[root] module.common.data.aws_subnet.protected_subnets" -> "[root] module.common.var.max_number_of_azs"
+		"[root] module.common.data.aws_subnet_ids.private_subnets" -> "[root] module.common.data.aws_vpc.default"
+		"[root] module.common.data.aws_subnet_ids.private_subnets" -> "[root] module.common.var.private_subnets_name"
+		"[root] module.common.data.aws_subnet_ids.protected_subnets" -> "[root] module.common.data.aws_vpc.default"
+		"[root] module.common.data.aws_subnet_ids.protected_subnets" -> "[root] module.common.var.protected_subnets_name"
+		"[root] module.common.data.aws_vpc.default" -> "[root] module.common.var.vpc_name"
+		"[root] module.common.data.aws_vpc.default" -> "[root] provider.aws"
+		"[root] module.common.output.availability_zones" -> "[root] module.common.data.aws_subnet.protected_subnets"
+		"[root] module.common.output.lambda_role" -> "[root] module.common.data.aws_iam_role.lambda_role"
+		"[root] module.common.output.private_subnet_ids" -> "[root] module.common.data.aws_subnet.private_subnets"
+		"[root] module.common.output.rds_restore_role" -> "[root] module.common.data.aws_iam_role.rds_restore_role"
+		"[root] module.common.output.route53_zone_id" -> "[root] module.common.data.aws_route53_zone.selected"
+		"[root] module.common.output.security_groups" -> "[root] module.common.data.aws_security_group.security_groups"
+		"[root] module.common.output.security_groups_lambda" -> "[root] module.common.data.aws_security_group.security_groups_lambda"
+		"[root] module.common.output.subnet_ids" -> "[root] module.common.data.aws_subnet.protected_subnets"
+		"[root] module.common.output.vpc_id" -> "[root] module.common.data.aws_vpc.default"
+		"[root] module.common.var.route53_zone_name" -> "[root] var.route53_zone_name"
+		"[root] module.dns.aws_route53_record.dmi_db" -> "[root] module.dns.var.name"
+		"[root] module.dns.aws_route53_record.dmi_db" -> "[root] module.dns.var.records"
+		"[root] module.dns.aws_route53_record.dmi_db" -> "[root] module.dns.var.ttl"
+		"[root] module.dns.aws_route53_record.dmi_db" -> "[root] module.dns.var.zone_id"
+		"[root] module.dns.var.name" -> "[root] var.db_cname"
+		"[root] module.dns.var.records" -> "[root] module.rds_instance.output.address"
+		"[root] module.dns.var.zone_id" -> "[root] module.common.output.route53_zone_id"
+		"[root] module.lambda_copy_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_copy_snapshot.local.function_name"
+		"[root] module.lambda_copy_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_copy_snapshot.var.is_enabled"
+		"[root] module.lambda_copy_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_copy_snapshot.var.rule_description"
+		"[root] module.lambda_copy_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_copy_snapshot.var.rule_schedule_expression"
+		"[root] module.lambda_copy_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] provider.aws"
+		"[root] module.lambda_copy_snapshot.aws_cloudwatch_event_target.target" -> "[root] module.lambda_copy_snapshot.aws_lambda_function.lambda"
+		"[root] module.lambda_copy_snapshot.aws_cloudwatch_event_target.target" -> "[root] module.lambda_copy_snapshot.var.target_input_json"
+		"[root] module.lambda_copy_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_copy_snapshot.local.file"
+		"[root] module.lambda_copy_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_copy_snapshot.local.function_name"
+		"[root] module.lambda_copy_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_copy_snapshot.var.role"
+		"[root] module.lambda_copy_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_copy_snapshot.var.runtime"
+		"[root] module.lambda_copy_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_copy_snapshot.var.security_group_ids"
+		"[root] module.lambda_copy_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_copy_snapshot.var.subnet_ids"
+		"[root] module.lambda_copy_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_copy_snapshot.var.tags"
+		"[root] module.lambda_copy_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_copy_snapshot.var.timeout"
+		"[root] module.lambda_copy_snapshot.aws_lambda_permission.eds_permission" -> "[root] module.lambda_copy_snapshot.aws_cloudwatch_event_rule.rule"
+		"[root] module.lambda_copy_snapshot.aws_lambda_permission.eds_permission" -> "[root] module.lambda_copy_snapshot.aws_lambda_function.lambda"
+		"[root] module.lambda_copy_snapshot.local.file" -> "[root] module.lambda_copy_snapshot.var.file_name"
+		"[root] module.lambda_copy_snapshot.local.file" -> "[root] module.lambda_copy_snapshot.var.file_path"
+		"[root] module.lambda_copy_snapshot.local.function_name" -> "[root] module.lambda_copy_snapshot.var.function_name"
+		"[root] module.lambda_copy_snapshot.local.function_name" -> "[root] module.lambda_copy_snapshot.var.stack_color"
+		"[root] module.lambda_copy_snapshot.output.function_name" -> "[root] module.lambda_copy_snapshot.var.function_name"
+		"[root] module.lambda_copy_snapshot.output.lambda_arn" -> "[root] module.lambda_copy_snapshot.aws_lambda_function.lambda"
+		"[root] module.lambda_copy_snapshot.var.file_name" -> "[root] local.copy_snapshot"
+		"[root] module.lambda_copy_snapshot.var.file_path" -> "[root] local.lambda_files_path"
+		"[root] module.lambda_copy_snapshot.var.function_name" -> "[root] local.copy_snapshot"
+		"[root] module.lambda_copy_snapshot.var.is_enabled" -> "[root] local.copy_snapshot"
+		"[root] module.lambda_copy_snapshot.var.role" -> "[root] module.common.output.lambda_role"
+		"[root] module.lambda_copy_snapshot.var.rule_description" -> "[root] local.copy_snapshot"
+		"[root] module.lambda_copy_snapshot.var.rule_schedule_expression" -> "[root] local.copy_snapshot"
+		"[root] module.lambda_copy_snapshot.var.security_group_ids" -> "[root] module.common.output.security_groups_lambda"
+		"[root] module.lambda_copy_snapshot.var.stack_color" -> "[root] var.stack_color"
+		"[root] module.lambda_copy_snapshot.var.subnet_ids" -> "[root] module.common.output.private_subnet_ids"
+		"[root] module.lambda_copy_snapshot.var.tags" -> "[root] var.tags"
+		"[root] module.lambda_copy_snapshot.var.target_input_json" -> "[root] data.template_file.input_json"
+		"[root] module.lambda_create_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_create_snapshot.local.function_name"
+		"[root] module.lambda_create_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_create_snapshot.var.is_enabled"
+		"[root] module.lambda_create_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_create_snapshot.var.rule_description"
+		"[root] module.lambda_create_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_create_snapshot.var.rule_schedule_expression"
+		"[root] module.lambda_create_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] provider.aws"
+		"[root] module.lambda_create_snapshot.aws_cloudwatch_event_target.target" -> "[root] module.lambda_create_snapshot.aws_lambda_function.lambda"
+		"[root] module.lambda_create_snapshot.aws_cloudwatch_event_target.target" -> "[root] module.lambda_create_snapshot.var.target_input_json"
+		"[root] module.lambda_create_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_create_snapshot.local.file"
+		"[root] module.lambda_create_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_create_snapshot.local.function_name"
+		"[root] module.lambda_create_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_create_snapshot.var.role"
+		"[root] module.lambda_create_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_create_snapshot.var.runtime"
+		"[root] module.lambda_create_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_create_snapshot.var.security_group_ids"
+		"[root] module.lambda_create_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_create_snapshot.var.subnet_ids"
+		"[root] module.lambda_create_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_create_snapshot.var.tags"
+		"[root] module.lambda_create_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_create_snapshot.var.timeout"
+		"[root] module.lambda_create_snapshot.aws_lambda_permission.eds_permission" -> "[root] module.lambda_create_snapshot.aws_cloudwatch_event_rule.rule"
+		"[root] module.lambda_create_snapshot.aws_lambda_permission.eds_permission" -> "[root] module.lambda_create_snapshot.aws_lambda_function.lambda"
+		"[root] module.lambda_create_snapshot.local.file" -> "[root] module.lambda_create_snapshot.var.file_name"
+		"[root] module.lambda_create_snapshot.local.file" -> "[root] module.lambda_create_snapshot.var.file_path"
+		"[root] module.lambda_create_snapshot.local.function_name" -> "[root] module.lambda_create_snapshot.var.function_name"
+		"[root] module.lambda_create_snapshot.local.function_name" -> "[root] module.lambda_create_snapshot.var.stack_color"
+		"[root] module.lambda_create_snapshot.output.function_name" -> "[root] module.lambda_create_snapshot.var.function_name"
+		"[root] module.lambda_create_snapshot.output.lambda_arn" -> "[root] module.lambda_create_snapshot.aws_lambda_function.lambda"
+		"[root] module.lambda_create_snapshot.var.file_name" -> "[root] local.create_snapshot"
+		"[root] module.lambda_create_snapshot.var.file_path" -> "[root] local.lambda_files_path"
+		"[root] module.lambda_create_snapshot.var.function_name" -> "[root] local.create_snapshot"
+		"[root] module.lambda_create_snapshot.var.is_enabled" -> "[root] local.create_snapshot"
+		"[root] module.lambda_create_snapshot.var.role" -> "[root] module.common.output.lambda_role"
+		"[root] module.lambda_create_snapshot.var.rule_description" -> "[root] local.create_snapshot"
+		"[root] module.lambda_create_snapshot.var.rule_schedule_expression" -> "[root] local.create_snapshot"
+		"[root] module.lambda_create_snapshot.var.security_group_ids" -> "[root] module.common.output.security_groups_lambda"
+		"[root] module.lambda_create_snapshot.var.stack_color" -> "[root] var.stack_color"
+		"[root] module.lambda_create_snapshot.var.subnet_ids" -> "[root] module.common.output.private_subnet_ids"
+		"[root] module.lambda_create_snapshot.var.tags" -> "[root] var.tags"
+		"[root] module.lambda_create_snapshot.var.target_input_json" -> "[root] data.template_file.input_json"
+		"[root] module.lambda_delete_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_delete_snapshot.local.function_name"
+		"[root] module.lambda_delete_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_delete_snapshot.var.is_enabled"
+		"[root] module.lambda_delete_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_delete_snapshot.var.rule_description"
+		"[root] module.lambda_delete_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] module.lambda_delete_snapshot.var.rule_schedule_expression"
+		"[root] module.lambda_delete_snapshot.aws_cloudwatch_event_rule.rule" -> "[root] provider.aws"
+		"[root] module.lambda_delete_snapshot.aws_cloudwatch_event_target.target" -> "[root] module.lambda_delete_snapshot.aws_lambda_function.lambda"
+		"[root] module.lambda_delete_snapshot.aws_cloudwatch_event_target.target" -> "[root] module.lambda_delete_snapshot.var.target_input_json"
+		"[root] module.lambda_delete_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_delete_snapshot.local.file"
+		"[root] module.lambda_delete_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_delete_snapshot.local.function_name"
+		"[root] module.lambda_delete_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_delete_snapshot.var.role"
+		"[root] module.lambda_delete_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_delete_snapshot.var.runtime"
+		"[root] module.lambda_delete_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_delete_snapshot.var.security_group_ids"
+		"[root] module.lambda_delete_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_delete_snapshot.var.subnet_ids"
+		"[root] module.lambda_delete_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_delete_snapshot.var.tags"
+		"[root] module.lambda_delete_snapshot.aws_lambda_function.lambda" -> "[root] module.lambda_delete_snapshot.var.timeout"
+		"[root] module.lambda_delete_snapshot.aws_lambda_permission.eds_permission" -> "[root] module.lambda_delete_snapshot.aws_cloudwatch_event_rule.rule"
+		"[root] module.lambda_delete_snapshot.aws_lambda_permission.eds_permission" -> "[root] module.lambda_delete_snapshot.aws_lambda_function.lambda"
+		"[root] module.lambda_delete_snapshot.local.file" -> "[root] module.lambda_delete_snapshot.var.file_name"
+		"[root] module.lambda_delete_snapshot.local.file" -> "[root] module.lambda_delete_snapshot.var.file_path"
+		"[root] module.lambda_delete_snapshot.local.function_name" -> "[root] module.lambda_delete_snapshot.var.function_name"
+		"[root] module.lambda_delete_snapshot.local.function_name" -> "[root] module.lambda_delete_snapshot.var.stack_color"
+		"[root] module.lambda_delete_snapshot.output.function_name" -> "[root] module.lambda_delete_snapshot.var.function_name"
+		"[root] module.lambda_delete_snapshot.output.lambda_arn" -> "[root] module.lambda_delete_snapshot.aws_lambda_function.lambda"
+		"[root] module.lambda_delete_snapshot.var.file_name" -> "[root] local.delete_snapshot"
+		"[root] module.lambda_delete_snapshot.var.file_path" -> "[root] local.lambda_files_path"
+		"[root] module.lambda_delete_snapshot.var.function_name" -> "[root] local.delete_snapshot"
+		"[root] module.lambda_delete_snapshot.var.is_enabled" -> "[root] local.delete_snapshot"
+		"[root] module.lambda_delete_snapshot.var.role" -> "[root] module.common.output.lambda_role"
+		"[root] module.lambda_delete_snapshot.var.rule_description" -> "[root] local.delete_snapshot"
+		"[root] module.lambda_delete_snapshot.var.rule_schedule_expression" -> "[root] local.delete_snapshot"
+		"[root] module.lambda_delete_snapshot.var.security_group_ids" -> "[root] module.common.output.security_groups_lambda"
+		"[root] module.lambda_delete_snapshot.var.stack_color" -> "[root] var.stack_color"
+		"[root] module.lambda_delete_snapshot.var.subnet_ids" -> "[root] module.common.output.private_subnet_ids"
+		"[root] module.lambda_delete_snapshot.var.tags" -> "[root] var.tags"
+		"[root] module.lambda_delete_snapshot.var.target_input_json" -> "[root] data.template_file.input_json"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.data.aws_db_snapshot.snapshot"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.allocated_storage"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.allow_major_version_upgrade"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.auto_minor_version_upgrade"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.backup_retention_period"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.copy_tags_to_snapshot"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.db_subnet_group_name"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.db_vpc_security_group_ids"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.deletion_protection"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.engine"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.engine_version"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.final_snapshot_identifier"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.instance_class"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.license_model"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.max_allocated_storage"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.multi_az"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.option_group_name"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.parameter_group_name"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.password"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.skip_final_snapshot"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.storage_encrypted"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.storage_type"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.tags"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.timezone"
+		"[root] module.rds_instance.aws_db_instance.dmidb" -> "[root] module.rds_instance.var.username"
+		"[root] module.rds_instance.data.aws_db_snapshot.snapshot" -> "[root] module.rds_instance.var.identifier"
+		"[root] module.rds_instance.data.aws_db_snapshot.snapshot" -> "[root] module.rds_instance.var.snapshot_identifier"
+		"[root] module.rds_instance.data.aws_db_snapshot.snapshot" -> "[root] provider.aws"
+		"[root] module.rds_instance.output.address" -> "[root] module.rds_instance.aws_db_instance.dmidb"
+		"[root] module.rds_instance.var.allocated_storage" -> "[root] var.allocated_storage"
+		"[root] module.rds_instance.var.allow_major_version_upgrade" -> "[root] var.allow_major_version_upgrade"
+		"[root] module.rds_instance.var.auto_minor_version_upgrade" -> "[root] var.auto_minor_version_upgrade"
+		"[root] module.rds_instance.var.availability_zones" -> "[root] module.common.output.availability_zones"
+		"[root] module.rds_instance.var.backup_retention_period" -> "[root] var.backup_retention_period"
+		"[root] module.rds_instance.var.copy_tags_to_snapshot" -> "[root] var.copy_tags_to_snapshot"
+		"[root] module.rds_instance.var.db_subnet_group_name" -> "[root] var.db_subnet_group_name"
+		"[root] module.rds_instance.var.db_vpc_security_group_ids" -> "[root] module.common.output.security_groups"
+		"[root] module.rds_instance.var.deletion_protection" -> "[root] var.deletion_protection"
+		"[root] module.rds_instance.var.engine" -> "[root] var.engine"
+		"[root] module.rds_instance.var.engine_version" -> "[root] var.engine_version"
+		"[root] module.rds_instance.var.final_snapshot_identifier" -> "[root] var.final_snapshot_identifier"
+		"[root] module.rds_instance.var.identifier" -> "[root] var.identifier"
+		"[root] module.rds_instance.var.instance_class" -> "[root] var.instance_class"
+		"[root] module.rds_instance.var.license_model" -> "[root] var.license_model"
+		"[root] module.rds_instance.var.max_allocated_storage" -> "[root] var.max_allocated_storage"
+		"[root] module.rds_instance.var.multi_az" -> "[root] var.multi_az"
+		"[root] module.rds_instance.var.option_group_name" -> "[root] var.option_group_name"
+		"[root] module.rds_instance.var.parameter_group_name" -> "[root] var.parameter_group_name"
+		"[root] module.rds_instance.var.password" -> "[root] var.password"
+		"[root] module.rds_instance.var.skip_final_snapshot" -> "[root] var.skip_final_snapshot"
+		"[root] module.rds_instance.var.storage_encrypted" -> "[root] var.storage_encrypted"
+		"[root] module.rds_instance.var.storage_type" -> "[root] var.storage_type"
+		"[root] module.rds_instance.var.subnet_ids" -> "[root] module.common.output.subnet_ids"
+		"[root] module.rds_instance.var.tags" -> "[root] var.tags"
+		"[root] module.rds_instance.var.timezone" -> "[root] var.timezone"
+		"[root] module.rds_instance.var.username" -> "[root] var.username"
+		"[root] provider.aws (close)" -> "[root] module.common.data.aws_iam_role.rds_restore_role"
+		"[root] provider.aws (close)" -> "[root] module.common.data.aws_subnet.protected_subnets"
+		"[root] provider.aws (close)" -> "[root] module.dns.aws_route53_record.dmi_db"
+		"[root] provider.aws (close)" -> "[root] module.lambda_copy_snapshot.aws_cloudwatch_event_target.target"
+		"[root] provider.aws (close)" -> "[root] module.lambda_copy_snapshot.aws_lambda_permission.eds_permission"
+		"[root] provider.aws (close)" -> "[root] module.lambda_create_snapshot.aws_cloudwatch_event_target.target"
+		"[root] provider.aws (close)" -> "[root] module.lambda_create_snapshot.aws_lambda_permission.eds_permission"
+		"[root] provider.aws (close)" -> "[root] module.lambda_delete_snapshot.aws_cloudwatch_event_target.target"
+		"[root] provider.aws (close)" -> "[root] module.lambda_delete_snapshot.aws_lambda_permission.eds_permission"
+		"[root] provider.aws" -> "[root] var.aws_region"
+		"[root] provider.template (close)" -> "[root] data.template_file.input_json"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider.aws (close)"
+		"[root] root" -> "[root] provider.template (close)"
+	}
+}
+
